@@ -16,6 +16,19 @@ if v:version < 700 || !has('python3')
     finish
 endif
 
+let s:pyver_ok = 1
+python3 << endpython3
+import sys
+
+pyver = sys.version_info[:2]
+if pyver < (3, 6):
+    print("Sorry, Black requires Python 3.6+ to run.")
+    vim.command("let s:pyver_ok = 0")
+endpython3
+if !s:pyver_ok
+    finish
+endif
+
 if exists("g:load_black")
    finish
 endif

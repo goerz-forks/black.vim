@@ -22,15 +22,11 @@ def _get_virtualenv_site_packages(venv_path, pyver):
 
 
 def _initialize_black_env(upgrade=False):
-    pyver = sys.version_info[:2]
-    if pyver < (3, 6):
-        print("Sorry, Black requires Python 3.6+ to run.")
-        return False
-
     from pathlib import Path
     import subprocess
     import venv
 
+    pyver = sys.version_info[:2]
     virtualenv_path = Path(vim.eval("g:black_virtualenv")).expanduser()
     virtualenv_site_packages = str(
         _get_virtualenv_site_packages(virtualenv_path, pyver)
