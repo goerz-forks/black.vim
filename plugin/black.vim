@@ -2,7 +2,7 @@
 " Author: Łukasz Langa
 " Created: Mon Mar 26 23:27:53 2018 -0700
 " Requires: Vim Ver7.0+
-" Version:  1.0
+" Version:  1.1
 "
 " Documentation:
 "   This plugin formats Python files.
@@ -10,6 +10,8 @@
 " History:
 "  1.0:
 "    - initial version
+"  1.1:
+"    - restore cursor/window position after formatting
 
 if v:version < 700 || !has('python3')
     echo "This script requires vim7.0+ with Python 3.6 support."

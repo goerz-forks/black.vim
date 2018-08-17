@@ -87,7 +87,9 @@ def Black():
     except Exception as exc:
         print(exc)
     else:
+        cursor = vim.current.window.cursor
         vim.current.buffer[:] = new_buffer_str.split("\n")[:-1]
+        vim.current.window.cursor = cursor
         print(f"Reformatted in {time.time() - start:.4f}s.")
 
 
