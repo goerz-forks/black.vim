@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 python3 << endpython3
 import sys
 import vim
