@@ -1,10 +1,32 @@
 scriptencoding utf-8
 
+let s:pyver_ok = 1
 python3 << endpython3
 import sys
 import vim
 
+pyver = sys.version_info[:2]
+if pyver < (3, 6):
+    vim.command("let s:pyver_ok = 0")
+endpython3
 
+if !s:pyver_ok
+    function! black#Black()
+        echo 'Sorry, Black requires python 3.6+ to run'
+    endfunc
+
+    function! black#BlackUpgrade()
+        echo 'Sorry, Black requires python 3.6+ to run'
+    endfunc
+
+    function! black#BlackVersion()
+        echo 'Sorry, Black requires python 3.6+ to run'
+    endfunc
+
+    finish
+endif
+
+python3 << endpython3
 def _get_python_binary(exec_prefix):
     if sys.platform[:3] == "win":
         return exec_prefix / "python.exe"
