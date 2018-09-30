@@ -36,6 +36,9 @@ endif
 if !exists('g:black_skip_string_normalization')
     let g:black_skip_string_normalization = 0
 endif
+if !exists('g:black_skip_numeric_underscore_normalization')
+    let g:black_skip_numeric_underscore_normalization = 0
+endif
 
 command! Black call black#Black()
 command! BlackUpgrade call black#BlackUpgrade()

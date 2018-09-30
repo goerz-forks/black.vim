@@ -18,6 +18,7 @@ Taken from the main *Black* repository, with these small tweaks:
 * `g:black_fast` (defaults to `0`)
 * `g:black_linelength` (defaults to `88`)
 * `g:black_skip_string_normalization` (defaults to `0`)
+* `g:black_skip_numeric_underscore_normalization` (defaults to `0`)
 * `g:black_virtualenv` (defaults to `~/.vim/black`)
 
 To install with [vim-plug](https://github.com/junegunn/vim-plug):
