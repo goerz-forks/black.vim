@@ -4,9 +4,8 @@ A vim plugin for [*Black*](https://github.com/ambv/black).
 
 Taken from the main *Black* repository, with these small tweaks:
 
-* lazy loading
-* no mappings are provided (write your own!)
-* it's not embedded in the *Black* repository, so installing it will download only what you need
+* lazy loading, for much reduced impact on Vim startup time
+* not embedded in the *Black* repository, so installing it will download only what you need
 
 ## Commands
 
