@@ -103,6 +103,8 @@ def Black():
         mode |= black.FileMode.NO_STRING_NORMALIZATION
     if bool(int(vim.eval("g:black_skip_numeric_underscore_normalization"))):
         mode |= black.FileMode.NO_NUMERIC_UNDERSCORE_NORMALIZATION
+    if vim.current.buffer.name.endswith(".pyi"):
+        mode |= black.FileMode.PYI
     buffer_str = "\n".join(vim.current.buffer) + "\n"
     try:
         new_buffer_str = black.format_file_contents(
